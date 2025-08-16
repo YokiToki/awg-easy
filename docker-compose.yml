@@ -5,7 +5,7 @@ services:
   amnezia-wg-easy:
     env_file:
       - .env
-    image: ghcr.io/w0rng/amnezia-wg-easy
+    image: ghcr.io/yokitoki/awg-easy:latest
     container_name: amnezia-wg-easy
     volumes:
       - etc_wireguard:/etc/wireguard

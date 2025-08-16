@@ -10,7 +10,7 @@ jobs:
   deploy:
     name: Build & Deploy
     runs-on: ubuntu-latest
-    if: github.repository_owner == 'w0rng'
+    if: github.repository_owner == 'YokiToki'
     permissions:
       packages: write
       contents: read
@@ -40,4 +40,4 @@ jobs:
       with:
         push: true
         platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8
-        tags: ghcr.io/w0rng/amnezia-wg-easy:latest, ghcr.io/w0rng/amnezia-wg-easy:${{ env.RELEASE }}
+        tags: ghcr.io/yokitoki/awg-easy:latest, ghcr.io/yokitoki/awg-easy:${{ env.RELEASE }}
