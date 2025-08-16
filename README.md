@@ -1,6 +1,6 @@
 # AmnewziaWG Easy
 
-You have found the easiest way to install & manage WireGuard on any Linux host!
+You have found the easiest way to install & manage WireGuard on ~~any~~ Linux host!
 
 <p align="center">
   <img src="./assets/screenshot.png" width="802" />
@@ -137,3 +137,14 @@ And then run the `docker run -d \ ...` command above again.
 
 Based on [wg-easy](https://github.com/wg-easy/wg-easy) by Emile Nijssen.  
 Use integrations with AmneziaWg from [amnezia-wg-easy](https://github.com/spcfox/amnezia-wg-easy) by Viktor Yudov.
+
+---
+Then based on [amnezia-wg-easy](https://github.com/w0rng/amnezia-wg-easy) by Anton Abramov.
+
+Changes by Stanislav Karakovskii:
+- Replaced the old amneziavpn/amnezia-wg image (last released 2 years ago) with amneziavpn/amneziawg-go and fixed the version
+- Added restriction to only linux/amd64 build architecture because the new image does not support others
+- Minor changes to Dockerfile because the new image is alpine-based
+- Raised NodeJs build version
+- Fixes to docker-compose.yml
+- Release number now matches amneziawg-go version
