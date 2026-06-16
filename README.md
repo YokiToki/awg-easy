@@ -62,7 +62,7 @@ To automatically install & run wg-easy, simply run:
   --sysctl="net.ipv4.ip_forward=1" \
   --device=/dev/net/tun:/dev/net/tun \
   --restart unless-stopped \
-  ghcr.io/yokitoki/awg-easy
+  ghcr.io/igolka97/awg-easy
 ```
 
 > 💡 Replace `YOUR_SERVER_IP` with your WAN IP, or a Dynamic DNS hostname.
@@ -114,6 +114,8 @@ These options can be configured by setting environment variables using `-e KEY="
 | `JMAX`                        | `1000`            | `250`                          | Junk packet maximum size — maximum size for Junk packets.                                                                                                                                                                |
 | `S1`                          | `random`          | `75`                           | Init packet junk size — the size of random data that will be added to the init packet, the size of which is initially fixed.                                                                                             |
 | `S2`                          | `random`          | `75`                           | Response packet junk size — the size of random data that will be added to the response packet, the size of which is initially fixed.                                                                                     |
+| `S3`                          | `random`          | `75`                           | Underload packet junk size — the size of random data that will be added to underload packets.                                                                                                                            |
+| `S4`                          | `random`          | `75`                           | Transport packet junk size — the size of random data that will be added to transport packets.                                                                                                                            |
 | `H1`                          | `random`          | `1234567891`                   | Init packet magic header — the header of the first byte of the handshake. Must be < uint_max.                                                                                                                            |
 | `H2`                          | `random`          | `1234567892`                   | Response packet magic header — header of the first byte of the handshake response. Must be < uint_max.                                                                                                                   |
 | `H3`                          | `random`          | `1234567893`                   | Underload packet magic header — UnderLoad packet header. Must be < uint_max.                                                                                                                                             |
@@ -140,6 +142,7 @@ Use integrations with AmneziaWg from [amnezia-wg-easy](https://github.com/spcfox
 
 ---
 Then based on [amnezia-wg-easy](https://github.com/w0rng/amnezia-wg-easy) by Anton Abramov.
+Finally based on [amnezia-wg-easy](https://github.com/YokiToki/amnezia-wg-easy) by Stanislav Karakovskii.
 
 Changes by Stanislav Karakovskii:
 - Replaced the old amneziavpn/amnezia-wg image (last released 2 years ago) with amneziavpn/amneziawg-go and fixed the version

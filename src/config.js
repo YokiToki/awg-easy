@@ -7,7 +7,7 @@ module.exports.PORT = process.env.PORT || '51821';
 module.exports.WEBUI_HOST = process.env.WEBUI_HOST || '0.0.0.0';
 module.exports.PASSWORD_HASH = process.env.PASSWORD_HASH;
 module.exports.MAX_AGE = parseInt(process.env.MAX_AGE, 10) * 1000 * 60 || 0;
-module.exports.WG_PATH = process.env.WG_PATH || '/etc/wireguard/';
+module.exports.WG_PATH = process.env.WG_PATH || '/etc/amnezia/amneziawg';
 module.exports.WG_DEVICE = process.env.WG_DEVICE || 'eth0';
 module.exports.WG_HOST = process.env.WG_HOST;
 module.exports.WG_PORT = process.env.WG_PORT || '51820';
@@ -51,11 +51,13 @@ const getRandomInt = (min, max) => min + Math.floor(Math.random() * (max - min))
 const getRandomJunkSize = () => getRandomInt(15, 150);
 const getRandomHeader = () => getRandomInt(1, 2_147_483_647);
 
-module.exports.JC = process.env.JC || getRandomInt(3, 10);
+module.exports.JC = process.env.JC || getRandomInt(4, 12);
 module.exports.JMIN = process.env.JMIN || 50;
 module.exports.JMAX = process.env.JMAX || 1000;
 module.exports.S1 = process.env.S1 || getRandomJunkSize();
 module.exports.S2 = process.env.S2 || getRandomJunkSize();
+module.exports.S3 = process.env.S3 || getRandomInt(1, 64);
+module.exports.S4 = process.env.S4 || 0; // We require the user to specify this value explicitly, as it have a significant impact on performance.
 module.exports.H1 = process.env.H1 || getRandomHeader();
 module.exports.H2 = process.env.H2 || getRandomHeader();
 module.exports.H3 = process.env.H3 || getRandomHeader();
